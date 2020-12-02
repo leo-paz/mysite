@@ -3,9 +3,10 @@ $body-bg: #000;
 $enable-gradients: true;
 
 $colors: (
-  "nav-color": rgba(13, 14, 13, 0.459),
+  "nav-color": rgba(13, 14, 13, 1),
   "header-color": rgba(40, 44, 52, 0.459),
-  "lime-green-text": rgb(24, 71, 24)
+  "lime-green-text": rgb(24, 71, 24),
+  "navbar-emoji-bg": rgba(52, 58, 64, 1)
 );
 
 // Import Bootstrap and its default variables
@@ -28,10 +29,10 @@ $colors: (
 .navbar {
     position: fixed;
     left: 2.5em;
-    top: 33em;
+    top: 33%;
     border-radius: 50px;
     background-color: color("nav-color");
-    width: 110px;
+    width: 100px;
     float: left;
     box-shadow: 0px 4px 16px 8px rgba(0, 93, 5, 0.2)
 }
@@ -47,5 +48,25 @@ $colors: (
     background-color: color("header-color");
     color: color("lime-green-text");
     font-family: 'Share Tech', sans-serif;
+    margin: 0px;
+}
+
+span.emoji {
+    font-size: 30px;
+    vertical-align: middle;
+    line-height: 2.35;
+    height: 75px;
+    width: 75px;
+    background-color: color("navbar-emoji-bg");
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+}
+a.nav-link {
+    padding: 4px;
+}
+
+.between-emoji {
+    margin-bottom: 5px;
 }
 
