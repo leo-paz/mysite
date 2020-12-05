@@ -3,11 +3,13 @@ $body-bg: #000;
 $enable-gradients: true;
 
 $colors: (
-  "nav-color": rgba(13, 14, 13, 1),
-  "header-color": rgba(40, 44, 52, 0.459),
-  "lime-green-text": rgb(24, 71, 24),
-  "navbar-emoji-bg": rgba(52, 58, 64, 1)
+    "nav-color": rgba(13, 14, 13, 1),
+    "header-color": rgba(40, 44, 52, 0.459),
+    "lime-green-text": rgb(24, 71, 24),
+    "navbar-emoji-bg": rgba(52, 58, 64, 1),
 );
+
+
 
 // Import Bootstrap and its default variables
 // Custom.scss
@@ -24,40 +26,168 @@ $colors: (
 @import "../node_modules/bootstrap/scss/images";
 @import "../node_modules/bootstrap/scss/code";
 @import "../node_modules/bootstrap/scss/grid";
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-.navbar {
-    position: fixed;
-    left: 2.5em;
-    top: 33%;
-    border-radius: 50px;
-    background-color: color("nav-color");
-    width: 100px;
-    float: left;
-    box-shadow: 0px 4px 16px 8px rgba(0, 93, 5, 0.2)
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+// .navbar {
+//     position: fixed;
+//     left: 2.5em;
+//     top: 33%;
+//     border-radius: 50px;
+//     background-color: color("nav-color");
+//     width: 100px;
+//     float: left;
+//     box-shadow: 0px 4px 16px 8px rgba(0, 93, 5, 0.2)
+// }
+
+// .navbar, .navbar-nav {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+#root {
+    width: 100%;
+    height: 100%;
 }
 
-.navbar, .navbar-nav {
+#header {
+   margin: auto;
+   justify-content: center; 
+   width: 50%
+}
+
+#content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .jumbotron {
     background-color: color("header-color");
     color: color("lime-green-text");
-    font-family: 'Share Tech', sans-serif;
+    font-family: "Share Tech", sans-serif;
     margin: 0px;
+}
+
+.item4 {
+    background-color: gray("900");
+}
+
+.item3 {
+    background-color: gray("800");
+}
+
+.item2 {
+    background-color: gray("700");
+}
+
+.item1 {
+    background-color: gray("600");
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #154c94 0%, rgb(22, 129, 143) 100%);
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    position: fixed;
+    border-radius: 25px;
+    width: 110px;
+    height: 200px;
+    top: 0;
+    left: 0;
+}
+
+// .background {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 300px;
+//     background: #fff;
+// }
+
+button {
+    outline: none;
+    border: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    font-family: "Share Tech", sans-serif;
+}
+
+ul {
+    padding: 25px;
+    position: absolute;
+    top: 100px;
+    width: 230px;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-placeholder {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    flex: 40px 0;
+    margin-right: 20px;
+}
+
+.text-placeholder {
+    border-radius: 5px;
+    width: 200px;
+    height: 20px;
+    flex: 1;
+}
+
+.refresh {
+    padding: 10px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 span.emoji {
     font-size: 30px;
     vertical-align: middle;
     line-height: 2.35;
-    height: 75px;
-    width: 75px;
-    background-color: color("navbar-emoji-bg");
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     text-align: center;
     display: inline-block;
@@ -69,4 +199,3 @@ a.nav-link {
 .between-emoji {
     margin-bottom: 5px;
 }
-
