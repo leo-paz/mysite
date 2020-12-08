@@ -28,39 +28,97 @@ $colors: (
 @import "../node_modules/bootstrap/scss/grid";
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
-// .navbar {
-//     position: fixed;
-//     left: 2.5em;
-//     top: 33%;
-//     border-radius: 50px;
-//     background-color: color("nav-color");
-//     width: 100px;
-//     float: left;
-//     box-shadow: 0px 4px 16px 8px rgba(0, 93, 5, 0.2)
-// }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-// .navbar, .navbar-nav {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-// }
-
+@media (max-width: 800px) {
+    nav {
+        height: 80%;
+    }
+  }
 #root {
     width: 100%;
     height: 100%;
 }
 
 #header {
-   margin: auto;
-   justify-content: center; 
-   width: 50%
+    margin: auto;
+    justify-content: center;
+    background-color: #66c4e8;
+    //background: linear-gradient(180deg, #66c4e8 60%, rgb(237, 241, 241) 100%);
+    height: 100px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    font-family: "Share Tech", sans-serif;
+    box-shadow: 4px 4px 20px 4px rgba(15, 15, 15, 0.45);
 }
 
-#content {
-    display: flex;
-    flex-direction: column;
+#header h1 {
+    position: relative;
+    top: 10px;
+    //font-size: 5vw;
+    // border-radius: 5px;
+    // border: 5px solid #154c94;
 }
+
+#aboutme {
+    text-align: center;
+    font-family: "Share Tech", sans-serif;
+    position: relative;
+    top: 20px;
+    border-radius: 20px;
+    border: 0px solid #4c4d4e;
+    background-color: white;
+    //background: linear-gradient(90deg, #66c4e8 25%, rgb(237, 241, 241) 100%,);
+    box-shadow: 8px 8px 20px 8px rgba(26, 27, 26, 0.2);
+    height: auto;
+}
+
+h2 {
+    color: #66c4e8;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+hr {
+    border: 1px solid rgb(190, 232, 238);
+}
+
+#aboutme p {
+    color:black;
+}
+#aboutme h5 {
+    color: #66c4e8;
+    margin: 0px;
+    padding-top: 10px;
+}
+#aboutme ul {
+    position: relative;
+    //left: 50px;
+    top: 0px;
+    padding-left: 2rem;
+    list-style-type: none;
+    
+}
+#aboutme ul li{
+    margin: 0px;
+    
+}
+#aboutme ul li:before {
+    color:#66c4e8;
+    font-family: "Material Icons";
+    content: "done";
+}
+
+
+// #content {
+//     display: flex;
+//     width: 100vw;
+//     height: 100vh;
+//  }
 
 .jumbotron {
     background-color: color("header-color");
@@ -69,50 +127,54 @@ $colors: (
     margin: 0px;
 }
 
-.item4 {
-    background-color: gray("900");
+.force-front-1 {
+    z-index: 99;
+}
+.force-front-2 {
+    z-index: 50;
+}
+.force-front-3 {
+    z-index: 25;
+}
+.force-back {
+    z-index: -20;
 }
 
-.item3 {
-    background-color: gray("800");
-}
-
-.item2 {
-    background-color: gray("700");
-}
-
-.item1 {
-    background-color: gray("600");
+html, body {
+    margin: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(180deg, #154c94 0%, rgb(22, 129, 143) 100%);
-    overflow: hidden;
+    background-color: white;
+    //background: linear-gradient(180deg, #154c94 0%, rgb(22, 129, 143) 100%);
     padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 nav {
-    position: fixed;
-    border-radius: 25px;
+    position: absolute;
     width: 110px;
-    height: 200px;
-    top: 0;
+    top: 0px;
     left: 0;
+    bottom:0;
 }
 
-// .background {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 300px;
-//     background: #fff;
-// }
+.background {
+    position: absolute;
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    background: rgb(255, 255, 255);
+}
 
 button {
     outline: none;
@@ -122,8 +184,8 @@ button {
     -ms-user-select: none;
     cursor: pointer;
     position: absolute;
-    top: 18px;
-    left: 15px;
+    top: 22px;
+    left: 14px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -140,7 +202,7 @@ li {
 ul {
     padding: 25px;
     position: absolute;
-    top: 100px;
+    top: 70px;
     width: 230px;
 }
 
@@ -165,6 +227,9 @@ li {
     width: 200px;
     height: 20px;
     flex: 1;
+    justify-content: center;
+    vertical-align: auto;
+    text-align: center;
 }
 
 .refresh {
@@ -194,6 +259,14 @@ span.emoji {
 }
 a.nav-link {
     padding: 4px;
+}
+
+li p {
+    color: black;
+    padding: 0px 0px 10px 0px;
+    margin: 0;
+    position: relative;
+    bottom: 4px;
 }
 
 .between-emoji {

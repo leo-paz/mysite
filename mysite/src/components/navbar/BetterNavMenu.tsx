@@ -15,7 +15,7 @@ const sidebar = {
     }
   }),
   closed: {
-    clipPath: "circle(30px at 40px 40px)",
+    clipPath: "circle(30px at 40px 45px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -31,20 +31,16 @@ export const BetterNavMenu = () => {
   const { height } = Dimensions(containerRef);
 
   return (
-    <motion.nav
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-    ><motion.div
-    animate={{
-      scale: [1, 2, 2, 1, 1],
-      rotate: [0, 0, 270, 270, 0],
-      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-    }}
-  />
-      <motion.div className="background" variants={sidebar} />
-      <NavigationItems />
+    <motion.nav 
+        className="force-front-3" 
+        initial={false} 
+        animate={isOpen ? "open" : "closed"} 
+        custom={height} 
+        ref={containerRef} 
+        // style={{height: `${isOpen ? '30%': '0px'}`}}
+    >
+        <motion.div className="background" variants={sidebar} />
+      <NavigationItems isOpen={isOpen ? true : false}/>
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );

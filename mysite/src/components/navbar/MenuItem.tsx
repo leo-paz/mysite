@@ -20,28 +20,36 @@ const variants = {
 
 const menuItemProps = [
                 {colour: "#88fc03", link:"#aboutme", emoji: "🧑🏻", message: "about me"},
-                {colour: "#5efc03", link:"#work", emoji: "👨🏻‍💻", message: "work"},
-                {colour: "#41fc03", link:"#resume", emoji: "📄", message: "resume"}, 
-                {colour: "#2dfc03", link:"#github", emoji: "💬", message: "github"}, 
-                {colour: "#0bfc03", link:"#linkedin", emoji: "💬", message: "linkedin"}];
+                {colour: "#5efc03", link:"https://github.com/leo-paz", emoji: "👨🏻‍💻", message: "github"},
+                {colour: "#41fc03", link:"./resume.pdf", emoji: "📄", message: "resume"}, 
+                {colour: "#0bfc03", link:"https://www.linkedin.com/in/leonardo-paz-61b98a13a/", emoji: "💬", message: "linkedin"}];
 
 export const MenuItem = ({ i }) => {
   const style = { border: `2px solid ${menuItemProps[i].colour}` };
   const emoji = menuItemProps[i].emoji;
   const link = menuItemProps[i].link;
   const message = menuItemProps[i].message;
+  let anchor;
+  let messageElem;
+  if (i === 2) {
+    anchor = <a href={link} download><span className="emoji" role="img">{emoji}</span></a>;
+    messageElem = <a href={link} download><p>{message}</p></a>;
+  } else {
+    anchor = <a href={link}><span className="emoji" role="img">{emoji}</span></a>;
+    messageElem = <a href={link}><p>{message}</p></a>;
+  }
+
   return (
-    <motion.li
+    <motion.li className="force-front-1"
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-        
         <div className="icon-placeholder" style={style}>
-        <a href={link}><span className="emoji" role="img">{emoji}</span> </a>
+        {anchor}
         </div>
         <div className="text-placeholder" style={style} >
-        <p>{message}</p>
+        {messageElem}
         </div>
     </motion.li>
   );
