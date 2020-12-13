@@ -12,7 +12,7 @@ const variants = {
 };
 
 export const NavigationItems = ({ isOpen }) => (
-    (isOpen? <motion.ul className="" variants={variants}>
+    (isOpen? <motion.ul variants={variants}>
     {itemIds.map(i => (
       <MenuItem i={i} key={i} />
     ))}

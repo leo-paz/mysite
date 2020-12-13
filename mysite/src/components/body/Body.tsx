@@ -1,15 +1,13 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import AboutMe from '../aboutme/AboutMe';
+import FrontPage from '../frontpage/FrontPage';
 
 const Body = () => {
     return (
-        <Container fluid className="force-back">
-            <Row>
-                <Col>
-                    <AboutMe></AboutMe>
-                </Col>
-            </Row>
+        <Container fluid id="body">
+            <FrontPage></FrontPage>
+            <AboutMe></AboutMe>
         </Container>
     )
 }

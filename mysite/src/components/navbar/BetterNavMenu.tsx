@@ -1,9 +1,11 @@
 import * as React from "react";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useCycle } from "framer-motion";
 import { Dimensions } from "./dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { NavigationItems } from "./NavigationItems";
+import classnames from 'classnames';
+import { setConstantValue } from "typescript";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -25,23 +27,47 @@ const sidebar = {
   }
 };
 
+
 export const BetterNavMenu = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, setOpen] = useState(false);
   const containerRef = useRef(null);
   const { height } = Dimensions(containerRef);
+  const [previousScrollPos, setPreviousScrollPos] = useState({
+    prevScrollPos: window.pageXOffset,
+    visible: true
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+        const { prevScrollPos } = previousScrollPos;
+    
+        const currentScrollPos = window.pageYOffset;
+        const visible = prevScrollPos > currentScrollPos;
+
+        setOpen(isOpen && visible);
+    
+        setPreviousScrollPos({
+            prevScrollPos: currentScrollPos,
+            visible
+        });
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+        window.removeEventListener("scroll", handleScroll)
+    }
+})
 
   return (
-    <motion.nav 
-        className="force-front-3" 
+    <motion.nav
         initial={false} 
         animate={isOpen ? "open" : "closed"} 
         custom={height} 
-        ref={containerRef} 
-        // style={{height: `${isOpen ? '30%': '0px'}`}}
+        ref={containerRef}
     >
         <motion.div className="background" variants={sidebar} />
       <NavigationItems isOpen={isOpen ? true : false}/>
-      <MenuToggle toggle={() => toggleOpen()} />
+      <MenuToggle setOpen={() => setOpen(isOpen => !isOpen)} />
     </motion.nav>
   );
 };

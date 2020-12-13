@@ -11,8 +11,8 @@ const Path = props => (
   />
 );
 
-export const MenuToggle = ({ toggle }) => (
-  <button onClick={toggle} className="force-front-2">
+export const MenuToggle = ({ setOpen }) => (
+  <button onClick={setOpen}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{

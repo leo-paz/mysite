@@ -19,10 +19,10 @@ const variants = {
 };
 
 const menuItemProps = [
-                {colour: "#88fc03", link:"#aboutme", emoji: "🧑🏻", message: "about me"},
-                {colour: "#5efc03", link:"https://github.com/leo-paz", emoji: "👨🏻‍💻", message: "github"},
-                {colour: "#41fc03", link:"./resume.pdf", emoji: "📄", message: "resume"}, 
-                {colour: "#0bfc03", link:"https://www.linkedin.com/in/leonardo-paz-61b98a13a/", emoji: "💬", message: "linkedin"}];
+                {colour: "#66c4e8", link:"#aboutme", emoji: "🧑🏻", message: "about me"},
+                {colour: "#66c4e8", link:"https://github.com/leo-paz", emoji: "👨🏻‍💻", message: "github"},
+                {colour: "#66c4e8", link:"./resume.pdf", emoji: "📄", message: "resume"}, 
+                {colour: "#66c4e8", link:"https://www.linkedin.com/in/leonardo-paz-61b98a13a/", emoji: "💬", message: "linkedin"}];
 
 export const MenuItem = ({ i }) => {
   const style = { border: `2px solid ${menuItemProps[i].colour}` };

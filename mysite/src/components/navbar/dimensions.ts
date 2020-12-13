@@ -6,15 +6,15 @@ import { useLayoutEffect, useState } from "react";
 // It would be safer to  return null for unmeasured states.
 export const Dimensions = (ref) => {
   const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth
+    height: document.documentElement.clientHeight,
+    width: document.documentElement.clientWidth
   });
 
   useLayoutEffect(() => {
     function handleResize() {
       setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth
+        height: document.documentElement.clientHeight,
+        width: document.documentElement.clientWidth
       });
     }
     window.addEventListener("resize", handleResize);
