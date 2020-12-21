@@ -9,6 +9,17 @@ $colors: (
     "navbar-emoji-bg": rgba(52, 58, 64, 1),
 );
 
+.card {
+    //border-radius: 20px;
+    //border: 1px solid var(--text-primary);
+    position: relative;
+    margin: 25px;
+    height: 460px;
+    flex: 0 0 30%;
+    max-width: 30%;
+    box-shadow: 10px 10px 20px 4px rgba(15, 15, 15, 0.45);
+}
+
 
 
 // Import Bootstrap and its default variables
@@ -19,13 +30,6 @@ $colors: (
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
-
-// Optional
-@import "../node_modules/bootstrap/scss/reboot";
-@import "../node_modules/bootstrap/scss/type";
-@import "../node_modules/bootstrap/scss/images";
-@import "../node_modules/bootstrap/scss/code";
-@import "../node_modules/bootstrap/scss/grid";
 
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
@@ -50,6 +54,13 @@ $colors: (
 #root {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+}
+    
+#content {
+    display: flex;
+    justify-content: center;
 }
     
 #header {
@@ -58,16 +69,37 @@ $colors: (
     color: var(--text-primary);
 }
 
+#header ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: "Share Tech", sans-serif;
+}
+
+#header ul {
+    padding: 25px;
+    position: absolute;
+    top: 70px;
+    width: 230px;
+}
+
+#header li {
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 #body {
     margin-top: 5rem;
 }
 
 #frontpage {
-    position: relative;
+    // position: relative;
     justify-content: left;
     text-align: left;
     height: 95vh;
-    max-width: 75vh;
+    max-width: 75vw;
     margin-left: auto;
     margin-right: auto;
 }
@@ -119,32 +151,37 @@ $colors: (
 #aboutme {
     justify-content: left;
     text-align: left;
-    height: auto;
     //width: 100vw;
     vertical-align: center;
-    max-width: 75vh;
+    max-width: 75vw;
     margin-left: auto;
     margin-right: auto;
+    height: 95vh;
 }
-
-#aboutme h2 {
+#tech-about-me {
+    margin-top: 40px;
+}
+h1 {
     color: var(--text-primary);
     padding-top: 10px;
     padding-bottom: 0px;
-    font-size: clamp(30px, 4vw, 60px);
+    font-size: clamp(30px, 6vw, 60px);
 }
 
-#aboutme hr {
+h2 {
+    font-size: clamp(20px, 3vw, 45px);
+}
+
+hr {
     border: 1px solid rgb(190, 232, 238);
     margin-bottom: 20px;
-    padding-bottom: 20px;
 }
 
 #aboutme p {
     color:black;
     font-size: large;
     text-align: left;
-    font-size: clamp(15px, 1.3vw, 20px);
+    font-size: clamp(15px, 1.4vw, 23px);
 }
 #aboutme img {
     margin-bottom: 20px;
@@ -155,24 +192,43 @@ $colors: (
     margin: 0px;
     padding-top: 10px;
     font-size: clamp(20px, 2vw, 40px);
+    margin-bottom: 5px;
 }
 #aboutme ul {
     position: relative;
     top: 0px;
-    padding-left: 2rem;
+    padding-left: 0;
     list-style-type: none;
     
 }
-#aboutme ul li{
+#aboutme ul li {
     margin: 0px;
-    font-size: large;
     text-align: left;
-    font-size: clamp(15px, 1.3vw, 20px);
+    vertical-align: center;
+    font-size: clamp(15px, 1.5vw, 25px);
 }
 #aboutme ul li:before {
     color: var(--text-primary);
     font-family: "Material Icons";
+    font-size: clamp(15px, 1.5vw, 25px);
     content: "done";
+}
+
+#cardlist {
+    height: 95vh;
+    justify-content: left;
+    text-align: left;
+    max-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+    // flex: 1 1 100%;
+}
+#cardlist ul, li {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Oxygen', sans-serif;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .background {
@@ -189,6 +245,7 @@ $colors: (
     width: 100%;
     position: fixed;
     top: 0;
+    left: 0;
     box-shadow: 4px 4px 20px 4px rgba(15, 15, 15, 0.45);
     transition: top 0.6s, box-shadow 0.6s;
     z-index: 5;
@@ -261,28 +318,6 @@ button {
     height: 50px;
     border-radius: 50%;
     background: transparent;
-}
-
-ul,
-li {
-    margin: 0;
-    padding: 0;
-    font-family: "Share Tech", sans-serif;
-}
-
-ul {
-    padding: 25px;
-    position: absolute;
-    top: 70px;
-    width: 230px;
-}
-
-li {
-    list-style: none;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 }
 
 .icon-placeholder {

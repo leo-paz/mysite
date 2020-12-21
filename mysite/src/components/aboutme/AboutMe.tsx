@@ -4,13 +4,13 @@ import {Container, Row, Col, Image} from 'react-bootstrap';
 const AboutMe = () => {
     return (
         <Container id="aboutme" className="center-container">
-            <h2>About Me</h2>
+            <h1>About Me</h1>
             <hr></hr>
             <Row>
-                <Col lg={6} md={6} sm={12}>
+                <Col lg={3} md={6} sm={12}>
                     <Image fluid roundedCircle src="./cropped_dp.jpg"/>
                 </Col>
-                <Col lg={6} md={6} sm={12}>
+                <Col lg={9} md={6} sm={12}>
                     <p>I enjoy learning new technologies and building functional but creative 
                         software products. I just recently got into learning front end so please excuse
                         me for some UI working funny (especially on mobile) 😓 I will be getting better! 
@@ -24,10 +24,10 @@ const AboutMe = () => {
                     </p>
                 </Col>
             </Row>
-            <Row className="justify-content-lg-center">
+            <Row id="tech-about-me">
                 <Col lg={12} sm={12}><h5>Some technologies I have been working with recently:</h5></Col>
             </Row>
-            <Row className="justify-content-lg-center">
+            <Row >
                 <Col lg={4} md={4} sm={12}>
                 <ul>
                     <li>React</li>
