@@ -20,4 +20,4 @@ export const NavigationItems = ({ isOpen }) => (
   )
 );
 
-const itemIds = [0, 1, 2, 3];
+const itemIds = [0, 1, 2, 3, 4];

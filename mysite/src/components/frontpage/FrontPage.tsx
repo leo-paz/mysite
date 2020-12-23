@@ -7,7 +7,6 @@ const FrontPage = () => {
     };
     return (
         <Container 
-            fluid={true} 
             id="frontpage"
             className="center-container"
         >

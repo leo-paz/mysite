@@ -3,9 +3,11 @@ import {Container, Row, Col, Image} from 'react-bootstrap';
 
 const AboutMe = () => {
     return (
-        <Container id="aboutme" className="center-container">
+        <Container
+            id="aboutme" 
+            className="center-container"
+        >
             <h1>About Me</h1>
-            <hr></hr>
             <Row>
                 <Col lg={3} md={6} sm={12}>
                     <Image fluid roundedCircle src="./cropped_dp.jpg"/>
