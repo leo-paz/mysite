@@ -6,11 +6,11 @@ import Cardlist from '../Card/CardList';
 
 const Body = () => {
     return (
-        <Container fluid id="body">
+        <div id="body">
             <FrontPage/>
             <AboutMe/>
             <Cardlist/>
-        </Container>
+        </div>
     )
 }
 

@@ -34,22 +34,22 @@ const AboutMe = () => {
                 <ul>
                     <li>React</li>
                     <li>Angular</li>
-                    <li>PyTorch</li>
-                    <li>AWS S3, Route53, Cloudfront</li>
+                    <li>GraphQL</li>
+                    <li>AWS S3, Route53, Lambda</li>
                 </ul>
                 </Col>
                 <Col lg={4} md={4} sm={12}>
                 <ul>
                     <li>Detectron2</li>
-                    <li>NET Core</li>
-                    <li>ASPNET Core</li>
-                    <li>NET Framework</li>
+                    <li>.NET</li>
+                    <li>DynamoDB</li>
+                    <li>Docker</li>
                 </ul>
                 </Col>
                 <Col lg={4} md={4} sm={12}>
                 <ul>
                     <li>MySQL</li>
-                    <li>Google DeepLearning VM</li>
+                    <li>GatsbyJS</li>
                     <li>MongoDB</li>
                     <li>Weights&Biases</li>
                 </ul>

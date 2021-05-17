@@ -4,25 +4,41 @@ import Card from './Card';
 
 const experiences = [
     {
-        role: "Machine Learning Developer",
+        role: "Fullstack Developer",
+        company: "Fourth Year Project, GradAdmissions",
+        dateRange: "February 2021 - April 2021",
+        points: [
+            "Built GraphQL data fetchers in Java connected to DynamoDB to expose an API for managing professor and applicant " + 
+            "fields",
+            "Created a React web application in charge of authenticating with AWS Cognito, calling our GraphQL API, and uploading " +
+            "applicant documents to S3",
+            "Integrated high performing lottie animations into design for a more engaging user experience"
+        ],
+        links: ["https://main.d3qg8qn14f45no.amplifyapp.com/"],
+        technologies: ["React", "GraphQL", "lottie", "Java", "AWS S3", "AWS Cognito", "AWS Lambda", "Amazon API Gateway", "AWS Amplify" ],
+    },
+    {
+        role: "Fullstack Developer",
         company: "Fourth Year Project, SoAccessible",
-        dateRange: "May 2020 - Present",
+        dateRange: "May 2020 - April 2021",
         points: [
             "Completed transfer learning on a baseline instance segmentation model trained on the COCO Dataset " + 
             "to recognize inaccessible curbs, accessible curbs, accessible pedestrian signals (APS), ramps and stairs",
-            "Created google street view parser to scrape 6000 images to create a " + 
+            "Created Google Streetview parser to scrape 6000 images to create a " + 
             "dataset to train our computer vision model",
-            "In progress of scaling up model built in Colab in Google Deep Learning VM " + 
-            "and moving to AWS Sagemaker for production deployment"
+            "Trained deep learning model using Detectron2 and deployed containerized model to AWS Lambda with Amazon API Gateway",
+            "Designed and implemented UI and frontend code for interacting with Google API's and displaying our " +
+            "inferences on street view images along a route"
         ],
-        technologies: ["Google Colab", "Python", "Detectron2", "Weights&biases", "Google DeepLearning VM"],
+        links: ["https://www.soaccessible.com/"],
+        technologies: ["Google Colab pro", "Python", "Detectron2", "Weights&biases", "AWS Lambda", "API Gateway", "Docker", "AWS Amplify" ],
     },
     {
         role: "Web Developer",
         company: "Runn8",
         dateRange: "April 2019 - Present",
         points: [
-            "Designed and developed a website using Wix and Wix Code Javascript" + 
+            "Designed and developed a website using Wix and Wix Code Javascript " + 
             "API’s for more advanced logic Wix does not provide out of the box",
             "Developed components and workflows for displaying/managing user registration, " +
             "bookings, products, page routing permissions",
@@ -62,7 +78,7 @@ const experiences = [
         technologies: ["C#", ".NET", "Typescript", "Angular"],
     },
     {
-        role: "Classroom Technology Support/TA",
+        role: "Classroom Technology Support/Teaching Assistant",
         company: "Carleton University",
         dateRange: "September 2018 - December 2018",
         points: [

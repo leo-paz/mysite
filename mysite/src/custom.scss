@@ -37,6 +37,7 @@ $colors: (
         min-width: 300px;
         height: 65vh;
         padding: 1.2rem;
+        min-height: 520px;
     }
     .card-list {
         padding: 3.5rem;
@@ -57,6 +58,7 @@ $colors: (
         min-width: 400px;
         height: 50vh;
         padding: 1.2rem;
+        min-height: 520px;
     }
     .card-list {
         height: 60vh;
@@ -76,6 +78,7 @@ $colors: (
         min-width: 450px;
         height: 50vh;
         padding: 1.2rem;
+        min-height: 520px;
     }
     .card-list {
         height: 60vh;
@@ -95,6 +98,7 @@ $colors: (
         min-width: 500px;
         height: 50vh;
         padding: 1.2rem;
+        min-height: 520px;
     }
     .card-list {
         height: 60vh;
@@ -114,6 +118,7 @@ $colors: (
         min-width: 550px;
         height: 50vh;
         padding: 1.2rem;
+        min-height: 520px;
     }
     .card-list {
         height: 60vh;
@@ -160,20 +165,33 @@ $colors: (
     cursor: pointer;
 }
 
+#body {
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+}
+
 #frontpage {
     // position: relative;
     justify-content: left;
     text-align: left;
     height: 95vh;
-    min-width: 50vw;
+    width: 100vw;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding:3px;
+}
+
+.frontpage-content {
+    display: grid;
+    place-content: center;
 }
 
 #frontpage p {
     text-align: left;
     position: relative;
-    top: 25vh;
+    top: 26vh;
     left: 0.2rem;
     margin: 0px;
     font-size: clamp(15px, 1.7vw, 30px);
@@ -181,6 +199,7 @@ $colors: (
 }
 
 #frontpage h1 {
+    padding:0;
     position: relative;
     top: 25vh;
     color: #66c4e8;
@@ -204,16 +223,17 @@ $colors: (
     color: var(--text-secondary);
     border-radius: 5px;
     font-size: clamp(16px, 2vw, 30px);
-    transform: background-color 0.4 ease;
+    transition: opacity 0.4s ease;
     background: var(--text-primary-gradient);
     text-shadow: none;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    width: fit-content;
 }
 
 #frontpage a:hover{
-    background-color: #66c3e873;
+    opacity: 0.7
 }
 
 #frontpage h3 {
@@ -222,9 +242,9 @@ $colors: (
 #aboutme {
     justify-content: left;
     text-align: left;
-    //width: 100vw;
     vertical-align: center;
-    min-width: 50vw;
+    width: 100vw;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     min-height: 50vh;
@@ -310,10 +330,12 @@ hr {
     min-height: 95vh;
     justify-content: left;
     text-align: left;
-    min-width: 50vw;
+    width: 100vw;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     vertical-align: center;
+    padding: 3px;
 }
 #cardlist ul, li {
     font-family: 'Open Sans', sans-serif;
@@ -326,21 +348,24 @@ hr {
 
 .card-list {
     display: flex;
+    padding-top: 5rem;
     padding: 3rem;
+    width: 100vw;
+    padding-bottom: 7rem;
     overflow-x: scroll;
     overflow-y: hidden;
     align-items: center;
-    max-width: 1500px;
+    max-width: 1200px;
+    min-height: 625px;
 }
 
 .card-list::-webkit-scrollbar {
-    width: 0.4rem;
-    height: 0.4rem;
+    width: 0.5rem;
+    height: 0.5rem;
 }
 .card-list::-webkit-scrollbar-thumb {
     background: lightskyblue;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+    border-radius: 20px;
 }
 
 .card-list::-webkit-scrollbar-track {
@@ -357,7 +382,7 @@ hr {
     display: flex;
     flex-direction: column;
     transition: .2s;
-    margin: 0;
+    margin-top: 2rem;
     scroll-snap-align: start;
     clear: both;
     position: relative;
@@ -424,7 +449,7 @@ hr {
     margin: 0px;
     text-align: left;
     vertical-align: center;
-    font-size: clamp(10px, 1vw, 15px);
+    font-size: clamp(10px, 1vw, 13px);
 }
 
 .my-card li:before {
@@ -552,6 +577,23 @@ hr {
     color: #ada9a9
 }
 
+.link-button {
+    margin-top: auto;
+    display: grid;
+    place-content: center;
+}
+
+.link-button a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+    font-size: clamp(12px, 2vw, 26px);
+}
+
+.link-button a:hover {
+    color: var(--text-primary)
+}
+
 :root {
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
@@ -569,12 +611,12 @@ html, body {
 body {
     margin-top: 5rem;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
+    overflow-y: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased;
@@ -585,9 +627,11 @@ body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-track {
     background: white;
+    border-radius: 20px;
 }
 body::-webkit-scrollbar-thumb {
     background: lightskyblue;
+    border-radius: 20px;
 }
 
 nav {
@@ -600,12 +644,13 @@ nav {
 button {
     outline: none;
     border: none;
+    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     cursor: pointer;
     position: absolute;
-    top: 22px;
+    top: 15px;
     left: 14px;
     width: 50px;
     height: 50px;
